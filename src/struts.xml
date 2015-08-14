@@ -6,7 +6,7 @@
 	<constant name="struts.i18n.encoding" value="gb2312"></constant>
 	<package name="struts2" extends="jfreechart-default">
  		<action name="addVote" class="com.sanqing.action.AddVoteAction">
- 			<result name="success">/admin/addVote.jsp</result>
+ 			<result name="success" type="redirect">showChannel</result>
  		</action>
  		<action name="showVote" class="com.sanqing.action.ShowVoteAction">
  			<result name="success">/admin/showVote.jsp</result>
@@ -28,5 +28,11 @@
  			<result name="success" type="chain">voteResult</result>
  			<result name="input" type="chain">showVoteByChannel</result>
  		</action>
+ 		<action name="addChannel" class="com.sanqing.action.AddChannelAction">
+ 			<result name="success">/admin/addChannel.jsp</result>
+ 		</action> 
+ 		<action name="showChannel" class="com.sanqing.action.ShowChannelAction">
+ 			<result name="success">/admin/addVote.jsp</result>
+ 		</action> 	 		
  	</package>	
 </struts>

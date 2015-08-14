@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -38,6 +39,8 @@
         <td bgcolor="#f3ffe3">
         <div style="padding-left: 100px;padding-top: 10px;font-size: 12px">
 	       	<form action="addVote.action" method="post" name="addForm">
+			<!-- edit by damonbian -->
+			<!-- 
 	  		选择投票频道:<select name="channel">
 	  			<option value="1">NBA</option>
 	  			<option value="2">CBA</option>
@@ -46,6 +49,12 @@
 	  			<option value="5">英超</option>
 	  			<option value="6">F1</option>
 	  		</select><br/>
+			 -->
+	  		选择投票频道:<select name="channel">
+	  		<s:iterator value="#request.channels" var="channel">
+	  			<option value="${channel.channelID }">${channel.channelName }</option>
+	  		</s:iterator>
+	  		</select><br/>			 
 	  		请输入投票名称:<input type="text" name="voteName"/><br/>
 	  		<div id="voteOptionList">
 	  		选项1名称:<input type="text" name="voteOption"/><br/>
